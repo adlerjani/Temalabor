@@ -15,6 +15,7 @@ function App(){
         
         <body>
             <h1 className="header-text">To-Do App</h1>
+            <hr></hr>
             <div className="card-row">
             
             <ToDoCard />

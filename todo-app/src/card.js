@@ -48,7 +48,7 @@ export default function ToDoCard(){
                     <AssignmentIcon />
                 </Badge>
 
-                    <IconButton sx={{}}>
+                    <IconButton>
                         <EditIcon/>
                     </IconButton>
                     <IconButton>
