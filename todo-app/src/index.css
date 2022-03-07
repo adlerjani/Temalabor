@@ -7,4 +7,9 @@ body {
       font-size: 3em;
       text-align: center;
   }
+
+  .card-row{
+      display: flex;
+      flex-direction: row;
+  }
   
