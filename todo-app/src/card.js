@@ -6,6 +6,14 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import Badge from '@mui/material/Badge';
+
+import IconButton from "@mui/material/IconButton";
+import EditIcon from '@mui/icons-material/Edit';
+import AddIcon from '@mui/icons-material/Add';
+import Stack from "@mui/material/Stack";
+
 const bull = (
   <Box
     component="span"
@@ -14,8 +22,47 @@ const bull = (
     •
   </Box>
 );
+export default function ToDoCard(){
+    return(
+        <Card sx={{ 
+            minWidth: 400, 
+            maxWidth:500,
+            marginRight:2,
+            boxShadow: 3,
+            borderRadius: 1,}}>
+            <Box sx={{
+                backgroundColor:"#ebebeb",
+                border:0,
+                borderBottom:1,
+                borderBlockColor:'black',
+                padding:1,
+  
+                display:'flex',
 
-export default function BasicCard() {
+
+            }}>
+                <Typography sx={{ fontSize: 20,fontWeight:600,flexGrow:0, paddingTop:1}} color="text.primary">
+                Card Title
+                </Typography>
+                <Badge badgeContent={0} color="primary" sx={{ paddingLeft:1 ,flexGrow:1,paddingTop:1}}>
+                    <AssignmentIcon />
+                </Badge>
+
+                    <IconButton sx={{}}>
+                        <EditIcon/>
+                    </IconButton>
+                    <IconButton>
+                        <AddIcon/>
+                    </IconButton>
+
+            </Box>
+            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+            asdasdsadad
+            </Typography>
+        </Card>
+    );
+}
+/* export default function BasicCard() {
   return (
     <Card sx={{ minWidth: 300, maxWidth:400, marginRight:2}}>
       <CardContent>
@@ -39,4 +86,4 @@ export default function BasicCard() {
       </CardActions>
     </Card>
   );
-}
+} */

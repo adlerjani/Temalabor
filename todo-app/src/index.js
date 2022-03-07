@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 //import Card from '@mui/material/Card';
 import './index.css';
 
-import BasicCard from './card.js';
+import ToDoCard from './card.js';
 
 
 
@@ -17,8 +17,10 @@ function App(){
             <h1 className="header-text">To-Do App</h1>
             <div className="card-row">
             
-            <BasicCard />
-            <BasicCard />
+            <ToDoCard />
+            <ToDoCard />
+            <ToDoCard />
+
             </div>
         </body>
         
