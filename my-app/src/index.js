@@ -81,6 +81,7 @@ class Game extends React.Component {
   render() {
     const history = this.state.history;
     const current = history[history.length - 1];
+    //Itt kéne egy ilyet csinálni a dokumentáció szerint de nem okés: const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
 
     const moves = history.map((step, move) => {
