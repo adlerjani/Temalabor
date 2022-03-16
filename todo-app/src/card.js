@@ -22,7 +22,7 @@ const bull = (
     •
   </Box>
 );
-export default function ToDoCard(){
+export default function ToDoCard(props){
     return(
         <Card sx={{ 
             minWidth: 400, 
@@ -42,7 +42,7 @@ export default function ToDoCard(){
 
             }}>
                 <Typography sx={{ fontSize: 20,fontWeight:600,flexGrow:0, paddingTop:1}} color="text.primary">
-                Card Title
+                {props.name}
                 </Typography>
                 <Badge badgeContent={0} color="primary" sx={{ paddingLeft:1 ,flexGrow:1,paddingTop:1}}>
                     <AssignmentIcon />
