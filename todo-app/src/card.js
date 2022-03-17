@@ -56,9 +56,9 @@ export default function ToDoCard(props){
                     </IconButton>
 
             </Box>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            asdasdsadad
-            </Typography>
+            <Box>
+              
+            </Box>
         </Card>
     );
 }
