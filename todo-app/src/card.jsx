@@ -15,6 +15,7 @@ import AddIcon from '@mui/icons-material/Add';
 import Stack from "@mui/material/Stack";
 
 import Task from './task';
+import {Droppable} from 'react-beautiful-dnd';
 
 export default class ToDoCard extends React.Component{
   render() {
@@ -51,9 +52,17 @@ export default class ToDoCard extends React.Component{
                 </IconButton>
 
         </Box>
-        <Box sx={{padding:'8px'}}>
-          {this.props.tasks.map(task=><Task key={task.id} task={task}/>)}
-        </Box>
+        <Droppable droppableId={this.props.column.id}>
+        {provided=>(
+          <Box sx={{padding:'8px'}} ref={provided.innerRef} {...provided.droppableProps}>
+            {this.props.tasks.map((task,index)=>(
+              <Task key={task.id} task={task} index={index}/>
+              ))}
+            {provided.placeholder}
+          </Box>
+        )}
+          
+        </Droppable>
     </Card>
     )
   }

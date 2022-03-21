@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM, { render } from 'react-dom';
+import {DragDropContext} from 'react-beautiful-dnd';
 import { BrowserRouter } from 'react-router-dom';
 //mport Button from '@mui/material/Button';
 //import Card from '@mui/material/Card';
@@ -11,15 +12,22 @@ import initialData from './initialdate';
 
 class AppBoard extends React.Component{
     state =initialData;
+    onDragEnd= result =>{
+      
+    }
     render(){
-        return this.state.columnOrder.map(columnId=>{
+        return( 
+          <DragDropContext onDragEnd={this.onDragEnd}>
+            {this.state.columnOrder.map(columnId=>{
             const column=this.state.columns[columnId];
             const tasks=column.taskIds.map(taskId=>this.state.tasks[taskId]);
 
             //return column.title;
             return <ToDoCard key={column.id} column={column} tasks={tasks}/>;
-        })
-    }
+        })}
+        </DragDropContext>
+        );
+}
 }
 
 class App extends React.Component {
