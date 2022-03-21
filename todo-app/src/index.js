@@ -9,23 +9,36 @@ import ToDoCard from './card.js';
 import initialData from './initialdate';
 
 
-function App(){
+class AppBoard extends React.Component{
+    state =initialData;
+    render(){
+        return this.state.columnOrder.map(columnId=>{
+            const column=this.state.columns[columnId];
+            const tasks=column.taskIds.map(taskId=>this.state.tasks[taskId]);
 
-    return(
-        
-        <body>
-            <h1 className="header-text">To-Do App</h1>
-
-            <hr></hr>
-            <div className="card-row">
-            <ToDoCard name="To-Do"/>
-
-
-            </div>
-        </body>
-        
-    )
+            //return column.title;
+            return <ToDoCard key={column.id} column={column} tasks={tasks}/>;
+        })
+    }
 }
+
+class App extends React.Component {
+    render() {
+      return(
+        <body>
+        <h1 className="header-text">To-Do App</h1>
+
+        <hr></hr>
+        <div className="card-row">
+        <AppBoard/>
+        
+
+
+        </div>
+    </body>
+      );
+    }
+  }
 
 ReactDOM.render(
     <BrowserRouter>
