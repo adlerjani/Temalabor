@@ -14,15 +14,49 @@ import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
 import Stack from "@mui/material/Stack";
 
-const bull = (
-  <Box
-    component="span"
-    sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-  >
-    •
-  </Box>
-);
-export default function ToDoCard(props){
+export default class ToDoCard extends React.Component{
+  render() {
+    return(
+      <Card sx={{ 
+        minWidth: 400, 
+        maxWidth:500,
+        marginRight:2,
+        boxShadow: 3,
+        borderRadius: 1,}}>
+        <Box sx={{
+            backgroundColor:"#ebebeb",
+            border:0,
+            borderBottom:1,
+            borderBlockColor:'black',
+            padding:1,
+
+            display:'flex',
+
+
+        }}>
+            <Typography sx={{ fontSize: 20,fontWeight:600,flexGrow:0, paddingTop:1}} color="text.primary">
+            {this.props.column.title}
+            </Typography>
+            <Badge badgeContent={0} color="primary" sx={{ paddingLeft:1 ,flexGrow:1,paddingTop:1}}>
+                <AssignmentIcon />
+            </Badge>
+
+                <IconButton>
+                    <EditIcon/>
+                </IconButton>
+                <IconButton>
+                    <AddIcon/>
+                </IconButton>
+
+        </Box>
+        <Box>
+          
+        </Box>
+    </Card>
+    )
+  }
+}
+/* export default function ToDoCard(props){
     return(
         <Card sx={{ 
             minWidth: 400, 
@@ -61,7 +95,7 @@ export default function ToDoCard(props){
             </Box>
         </Card>
     );
-}
+} */
 /* export default function BasicCard() {
   return (
     <Card sx={{ minWidth: 300, maxWidth:400, marginRight:2}}>
