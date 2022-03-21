@@ -14,6 +14,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import AddIcon from '@mui/icons-material/Add';
 import Stack from "@mui/material/Stack";
 
+import Task from './task';
+
 export default class ToDoCard extends React.Component{
   render() {
     return(
@@ -49,8 +51,8 @@ export default class ToDoCard extends React.Component{
                 </IconButton>
 
         </Box>
-        <Box>
-          
+        <Box sx={{padding:'8px'}}>
+          {this.props.tasks.map(task=><Task key={task.id} task={task}/>)}
         </Box>
     </Card>
     )
