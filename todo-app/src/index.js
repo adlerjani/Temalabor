@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 //import Card from '@mui/material/Card';
 import './index.css';
 
-import ToDoCard from './card.js';
+import ToDoCard from './card';
 import initialData from './initialdate';
 
 
