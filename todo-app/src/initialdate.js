@@ -2,7 +2,7 @@ const initialData={
     tasks:{
         't1':{id:'t1',content:'Befejezni a témalabot'},
         't2':{id:'t2',content:'Megcsinálni a labort'},
-        't3':{id:'t3',content:'Beszarni a sörgyárt'},
+        't3':{id:'t3',content:'Másik task'},
         't4':{id:'t4',content:'valami random task'},
     },
     columns:{
