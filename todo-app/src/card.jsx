@@ -54,7 +54,9 @@ export default class ToDoCard extends React.Component{
         </Box>
         <Droppable droppableId={this.props.column.id}>
         {provided=>(
-          <Box sx={{padding:'8px'}} ref={provided.innerRef} {...provided.droppableProps}>
+          <Box sx={
+            {padding:'8px', transition: 'background-color 0.2s ease;', backgroundColor: props=>(props.isDraggingOver ? '#f8f8f8':'white') }
+          } ref={provided.innerRef} {...provided.droppableProps}>
             {this.props.tasks.map((task,index)=>(
               <Task key={task.id} task={task} index={index}/>
               ))}
