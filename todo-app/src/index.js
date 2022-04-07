@@ -11,8 +11,24 @@ import initialData from './initialdate';
 
 import Box from '@mui/material/Box';
 
+/* interface xyComponentProps{
+  name:streg,
+  addNewItemIntoLsit: (item: Item)  => any
+}
+
+const xyComp : FC<xyComponentProps> ({name: name, addNewItemIntoLsit: addNewItemIntoLsit}) =>{
+  
+  const handler = () => {
+    
+  }
+
+  return(
+    <Button onClick={habdler}/>
+  )
+} */
 
 class AppBoard extends React.Component{
+
     state =initialData;
     onDragEnd= result =>{
       const{destination,source,draggableId}=result;

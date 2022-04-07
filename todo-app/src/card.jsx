@@ -17,6 +17,54 @@ import Stack from "@mui/material/Stack";
 import Task from './task';
 import {Droppable} from 'react-beautiful-dnd';
 
+
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import TextField from '@mui/material/TextField';
+
+function AddDialog(props){
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <IconButton onClick={handleClickOpen}>
+        <AddIcon/>
+      </IconButton>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>{props.cardname}: Add Task</DialogTitle>
+        <DialogContent>
+          <TextField
+            autoFocus
+            margin="normal"
+            id=""
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Add</Button>
+        </DialogActions>
+      </Dialog>
+
+    </div>
+  );
+
+}
+
+
+
 export default class ToDoCard extends React.Component{
   render() {
     return(
@@ -47,9 +95,8 @@ export default class ToDoCard extends React.Component{
                 <IconButton>
                     <EditIcon/>
                 </IconButton>
-                <IconButton>
-                    <AddIcon/>
-                </IconButton>
+                <AddDialog cardname={this.props.column.title}/>
+                
 
         </Box>
         <Droppable droppableId={this.props.column.id}>
