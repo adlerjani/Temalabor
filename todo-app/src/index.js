@@ -5,9 +5,9 @@ import { BrowserRouter } from 'react-router-dom';
 //mport Button from '@mui/material/Button';
 //import Card from '@mui/material/Card';
 import './index.css';
-
 import ToDoCard from './card';
 import initialData from './initialdate';
+import Hello from './Hello';
 
 import Box from '@mui/material/Box';
 
@@ -114,11 +114,14 @@ class AppBoard extends React.Component{
 }
 
 class App extends React.Component {
-    render() {
+  
+  
+  
+  render() {
       return(
         <body>
         <h1 className="header-text">To-Do App</h1>
-
+        <Hello />
         <hr></hr>
         <div className="card-row">
         <AppBoard/>

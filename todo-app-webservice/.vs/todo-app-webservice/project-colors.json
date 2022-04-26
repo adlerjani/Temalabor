@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "970c2af4-7b4c-43a2-bab7-c628bc278518": {
+      "ProjectGuid": "970c2af4-7b4c-43a2-bab7-c628bc278518",
+      "DisplayName": "todo-app-webservice",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6YnTHwgoqWfFHSNKbYMNG1QtiOJIrMZYXGOycncgfQY=",
+  "Source": "todo-app-webservice",
+  "BasePath": "_content/todo-app-webservice",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
