@@ -1,7 +1,3 @@
-import PersonList from './Hello';
-import Hello from './Hello';
-
-
 const initialData={
     tasks:{
         't1':{id:'t1',content:'Befejezni a témalabot'},
@@ -21,7 +17,7 @@ const initialData={
             taskIds:['t4'],
         },
     },
-    columnOrder:PersonList.state.persons,
+    columnOrder:['c1','c2'],
 };
 
 export default initialData;
