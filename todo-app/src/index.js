@@ -125,9 +125,6 @@ class App extends React.Component {
         <hr></hr>
         <div className="card-row">
         <AppBoard/>
-        
-
-
         </div>
     </body>
       );
