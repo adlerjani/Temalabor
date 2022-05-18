@@ -1,5 +1,7 @@
-export class CardModel{
-    id:number=0;
-    title:string='';
-    todos:any[] = [];
+import { TaskModel } from "./TaskModel";
+
+export interface  CardModel{
+    columnId:number,
+    title:string,
+    todos: TaskModel[]
 }

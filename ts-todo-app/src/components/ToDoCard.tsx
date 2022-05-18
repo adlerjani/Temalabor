@@ -1,14 +1,20 @@
 import { Badge, Box, Card, IconButton, Typography } from "@mui/material";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { CardModel } from "../models/CardModel";
+import Task from "./Task";
+import { TaskModel } from "../models/TaskModel";
 
 interface Props {
   card: CardModel;
 }
 
-const TodoCard: FC<Props> = ({ card: card }) => {
+const TodoCard: FC<Props> = ({ card: card}) => {
+
+//setTodosList(card.todos);
+//console.log("anyádban: "+todosList);
+console.log("EZ: "+ card);
   return (
     <Card
       sx={{
@@ -34,7 +40,7 @@ const TodoCard: FC<Props> = ({ card: card }) => {
           sx={{ fontSize: 20, fontWeight: 600, flexGrow: 0, paddingTop: 1 }}
           color="text.primary"
         >
-      {card.title}
+      {card.title + " -> " + card.columnId}
           
         </Typography>
         <Badge
@@ -46,10 +52,14 @@ const TodoCard: FC<Props> = ({ card: card }) => {
         </Badge>
 
         <IconButton>
-          <AddCircleRoundedIcon />{" "}
+          <AddCircleRoundedIcon />
         </IconButton>
       </Box>
-         asdf
+      <Box sx={{padding:'8px'}}>
+          {card.todos && card.todos.map((todo)=> (
+              <Task key={todo.todoId} todos={todo}></Task>
+          ))}
+      </Box>
     </Card>
   );
 };
