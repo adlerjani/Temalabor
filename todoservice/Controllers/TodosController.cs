@@ -52,15 +52,23 @@ namespace todoservice.Controllers
 
         // PUT: api/Todos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTodo(int id, Todo todo)
+        public async Task<IActionResult> PutTodo(int id, ToDODto todo)
         {
+
+            
             if (id != todo.TodoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(todo).State = EntityState.Modified;
+            var newTodoToSave = new Todo();
+            newTodoToSave.ColumnId = todo.ColumnId;
+            newTodoToSave.Content = todo.Content;
+            newTodoToSave.OrderId = todo.OrderId;
+
+            _context.Entry(newTodoToSave).State = EntityState.Modified;
 
             try
             {
