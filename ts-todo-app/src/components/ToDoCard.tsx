@@ -5,6 +5,8 @@ import { FC, useState } from "react";
 import { CardModel } from "../models/CardModel";
 import Task from "./Task";
 import { TaskModel } from "../models/TaskModel";
+import AddTask from "../models/AddTask";
+//import { AddTask } from "@mui/icons-material";
 
 interface Props {
   card: CardModel;
@@ -14,7 +16,7 @@ const TodoCard: FC<Props> = ({ card: card}) => {
 
 //setTodosList(card.todos);
 //console.log("anyádban: "+todosList);
-console.log("EZ: "+ card);
+//console.log("EZ: "+ card);
   return (
     <Card
       sx={{
@@ -40,7 +42,7 @@ console.log("EZ: "+ card);
           sx={{ fontSize: 20, fontWeight: 600, flexGrow: 0, paddingTop: 1 }}
           color="text.primary"
         >
-      {card.title + " -> " + card.columnId}
+      {card.title}
           
         </Typography>
         <Badge
@@ -50,10 +52,7 @@ console.log("EZ: "+ card);
         >
           <AssignmentIcon />
         </Badge>
-
-        <IconButton>
-          <AddCircleRoundedIcon />
-        </IconButton>
+        <AddTask key={card.columnId} card={card}></AddTask>
       </Box>
       <Box sx={{padding:'8px'}}>
           {card.todos && card.todos.map((todo)=> (

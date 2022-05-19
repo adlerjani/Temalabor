@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using todoservice.Data;
 using todoservice.Models;
 
 namespace todoservice.Controllers
@@ -46,7 +47,7 @@ namespace todoservice.Controllers
                 return NotFound();
             }
 
-            return todo;
+            return todo;    
         }
 
         // PUT: api/Todos/5
@@ -83,13 +84,18 @@ namespace todoservice.Controllers
         // POST: api/Todos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Todo>> PostTodo(Todo todo)
+        public async Task<ActionResult<Todo>> PostTodo(ToDODto todo)
         {
+            var newTodoToSave = new Todo();
+            newTodoToSave.ColumnId = todo.ColumnId;
+            newTodoToSave.Content = todo.Content;
+            newTodoToSave.OrderId = todo.OrderId;
+
           if (_context.TodoItems == null)
           {
               return Problem("Entity set 'TodoContext.TodoItems'  is null.");
           }
-            _context.TodoItems.Add(todo);
+            _context.TodoItems.Add(newTodoToSave);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetTodo", new { id = todo.TodoId }, todo);
