@@ -5,7 +5,7 @@ import { FC, useState } from "react";
 import { CardModel } from "../models/CardModel";
 import Task from "./Task";
 import { TaskModel } from "../models/TaskModel";
-import AddTask from "../models/AddTask";
+import AddTask from "./AddTask";
 //import { AddTask } from "@mui/icons-material";
 
 interface Props {

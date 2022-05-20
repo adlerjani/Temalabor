@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FC } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import AddCircleRoundedIcon from "@mui/icons-material/AddCircleRounded";
-import { CardModel } from './CardModel';
+import { CardModel } from '../models/CardModel';
 import { TaskModel } from "../models/TaskModel";
 import axios from 'axios';
 
@@ -56,6 +56,7 @@ const AddTask: FC<Props>=({card:card})=>{
                 console.log("Sikerült!");
                 console.log(res);
                 console.log(res.data);
+                window.location.reload();
             })
             .catch(error => {
                 console.error('There was an error!', error);
